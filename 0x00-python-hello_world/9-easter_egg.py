@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-print ("The Zen of Python, by Tim Peters")
+str = "The Zen of Python"
+print ("{} by Tim Peters".format(str))
