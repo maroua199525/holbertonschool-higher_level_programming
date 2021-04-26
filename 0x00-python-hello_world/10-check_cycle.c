@@ -17,7 +17,7 @@ int check_cycle(listint_t *list)
 		if (ptr == head)
 			return (1);
 		ptr = ptr->next;
-		head = head->next->next;
+		head = head->next
 	}
 	return (0);
 }
