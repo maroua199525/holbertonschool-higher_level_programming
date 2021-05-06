@@ -10,8 +10,12 @@ def roman_to_int(roman_string):
         }
     value = list(lst.values())
     key = list(lst.keys())
-    for k in range(length):
-        for i, v in zip(key, value):
-            if roman_string[k] == i:
-                s = s + v
+    k = 0
+    while k < length:
+        if k+1 < length and roman_string[k:k+2] in lst:
+            s = s + lst[roman_string[k:k+2]]
+            k = k+2
+        else:
+            s = s + lst[roman_string[k]]
+            k = k + 1
     return (s)
