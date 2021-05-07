@@ -12,7 +12,7 @@ def roman_to_int(roman_string):
     key = list(lst.keys())
     k = 0
     while k < length:
-        if k+1 < length and roman_string[k:k+2] in lst:
+        if k + 1 < length and roman_string[k:k+2] in lst:
             s = s + lst[roman_string[k:k+2]]
             k = k+2
         else:
