@@ -30,7 +30,7 @@ class Square:
         """ retrieve the value of __size"""
         return self.__position
 
-    @size.setter
+    @position.setter
     def position(self, value):
         """ sets the value of __position"""
         if type(value) != tuple or len(value) != 2:
