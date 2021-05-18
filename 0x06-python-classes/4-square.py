@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" Module Sqaure """
+
+
 class Square:
     """square class defined by size."""
     def __init__(self, size=0):
