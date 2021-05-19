@@ -51,6 +51,7 @@ class Square:
                 for j in range(0, self.__size):
                     print("#", end="")
                 print()
+
     @property
     def position(self):
         """ give the position of the square
