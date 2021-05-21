@@ -1,0 +1,30 @@
+Using ``say_my_name``
+-------------------
+
+This is an say_my_name text file in reStructuredText format.  First import
+``say_my_name`` from the ``0-say_my_name`` module:
+
+>>> say = __import__("3-say_my_name").say_my_name
+>>> say("John", "Smith")
+My name is John Smith
+>>> say("Walter", "White")
+My name is Walter White
+>>> say("Bob")
+My name is Bob 
+Testing First Name is not str
+    >>> say_my_name('6', 'chemi')
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Testing last name is not str
+    >>> say_my_name('chemi',6)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Testing without args
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
