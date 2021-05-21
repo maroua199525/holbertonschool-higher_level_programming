@@ -35,16 +35,16 @@ Traceback (most recent call last):
 		  ...
 TypeError: div must be a number
 
-# force error divide by 0
+# divide by 0
 >>> print(matrix_divided(matrix, 0))
 Traceback (most recent call last):
 		  ...
 ZeroDivisionError: division by zero
 
-redefine matrix
+size of matrix different
 >>> matrix = [[1, 2, 3], [4, 6]]
 
- row of the matrix have different size
+ length of the matrix have different size
 >>> print(matrix_divided(matrix, 2))
 Traceback (most recent call last):
 		  ...
