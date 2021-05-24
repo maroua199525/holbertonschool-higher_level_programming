@@ -113,7 +113,7 @@ class Rectangle:
         delete function is the destructor
 
         """
-        print("Bye rectangle...")
         # When new instance delated
         # subs to number of instances
         Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")

@@ -39,9 +39,9 @@ class Rectangle:
         the widith with his value
         """
         if type(value) is not int:
-            raise TypeError("value must be an integer")
-        elif value < 0:
-            raise ValueError("message value must be >= 0")
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
         else:
             self.__width = value
 
@@ -63,12 +63,12 @@ class Rectangle:
         ValueError("message height must be >= 0")
 
         Return:
-        the widith with his value
+        the height with his value
         """
         if type(value) is not int:
-            raise TypeError("value must be an integer")
-        elif value < 0:
-            raise ValueError("message value must be >= 0")
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
         else:
             self.__height = value
 
@@ -117,7 +117,7 @@ class Rectangle:
         delete function is the destructor
 
         """
-        print("Bye rectangle...")
         # When new instance delated
         # subs to number of instances
         Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
