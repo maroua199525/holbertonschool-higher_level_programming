@@ -102,7 +102,13 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         symbol = str(self.print_symbol)
-        return ((symbol*self.__width + "\n")*self.__height)
+        new = ""
+        for i in range(0, self.__height):
+            for j in range(0, self.__width):
+                new += symbol
+            if i != (self.__height - 1):
+                new += '\n'
+        return new
 
     def __repr__(self):
         """
@@ -139,9 +145,9 @@ class Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
         area1 = Rectangle.area(rect_1)
         area2 = Rectangle.area(rect_2)
-        if area1 > area2 or area1 == area2:
+        if area1 >= area2:
             return rect_1
-        elif area1 < area2:
+        else:
             return rect_2
 
     @classmethod
