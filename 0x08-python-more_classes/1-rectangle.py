@@ -6,8 +6,8 @@ class Rectangle:
     """ a rectangle class that define a rectangle"""
 
     def __init__(self, width=0, height=0):
-        self.height = height
         self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -24,15 +24,15 @@ class Rectangle:
 
         Raise:
         TypeError("width must be an integer")
-        ValueError("message width must be >= 0")
+        ValueError(" width must be >= 0")
 
         Return:
         the widith with his value
         """
         if type(value) is not int:
-            raise TypeError("value must be an integer")
+            raise TypeError("width must be an integer")
         if value < 0:
-            raise ValueError("message value must be >= 0")
+            raise ValueError("width must be >= 0")
         else:
             self.__width = value
 
@@ -51,14 +51,14 @@ class Rectangle:
 
         Raise:
         TypeError("height must be an integer")
-        ValueError("message height must be >= 0")
+        ValueError("height must be >= 0")
 
         Return:
         the widith with his value
         """
         if type(value) is not int:
-            raise TypeError("value must be an integer")
+            raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("message value must be >= 0")
+            raise ValueError("height must be >= 0")
         else:
             self.__height = value
