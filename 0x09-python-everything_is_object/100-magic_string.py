@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-def magic_string():
-    for index, value in enumerate():
-        return ("Holberton" * (i + 1))
+def magic_string(ch=[]):
+    ch.append("Holberton")
+    return (", ".join(ch))
