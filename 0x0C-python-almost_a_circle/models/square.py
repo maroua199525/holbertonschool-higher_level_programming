@@ -6,37 +6,35 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """ class Square that inherit from Rectangle"""
 
-    def __init__(self, size, x=0, y=0, id=None):
-        Rectangle.__init__(self, size, size, x, y, id)
-        self.size = size
+    def __init__(self, valuealue, x=0, y=0, id=None):
+        Rectangle.__init__(self, valuealue, valuealue, x, y, id)
+        self.valuealue = valuealue
 
     @property
-    def size(self):
-        """ size function to retrieve the size"""
+    def valuealue(self):
+        """ valuealue function to retrievaluee the valuealue"""
         return self.__width
 
-    @size.setter
-    def size(self, value):
-        """size function to set the value to the size
+    @valuealue.setter
+    def valuealue(self, valuealue):
+        """valuealue function to set the valuealue to the valuealue
         """
-        if type(value) is not int:
+        if type(valuealue) is not int:
             raise TypeError("width must be an integer")
-        elif value <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = value
-        self.__height = value
+        elif valuealue <= 0:
+            raise valuealueError("width must be > 0")
+        self.__width = valuealue
+        self.__height = valuealue
 
     def __str__(self):
         """ p"""
-        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
-                                                                 self.x,
-                                                                 self.y,
-                                                                 self.width,)
+        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.x,
+                                                         self.y, self.width)
 
-    def update(self, *args, **kwargs):
+    def update(self, *args, **keywargs):
         """ update function that assigns attributes
         1st argument should be the id attribute
-        2nd argument should be the size attribute
+        2nd argument should be the valuealue attribute
         3rd argument should be the x attribute
         4th argument should be the y attribute
         """
@@ -45,25 +43,32 @@ class Square(Rectangle):
                 self.id = args[0]
             if len(args) == 2:
                 self.id = args[0]
-                self.value = args[1]
+                self.width = args[1]
             if len(args) == 3:
                 self.id = args[0]
-                self.value = args[1]
+                self.width = args[1]
                 self.x = args[2]
             if len(args) == 4:
                 self.id = args[0]
-                self.value = args[1]
+                self.width = args[1]
                 self.x = args[2]
                 self.y = args[3]
         else:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+            for key, value in keywargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "size":
+                    self.width = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
 
         def to_dictionary(self):
             """
             returns the dictionary
             representation of a square
             """
-            dictionary = {'id': self.id, 'size': self.size,
+            dictionary = {'id': self.id, 'valuealue': self.valuealue,
                           'x': self.x, 'y': self.y}
             return dictionary
