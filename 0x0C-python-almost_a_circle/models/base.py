@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """ Module contain one class: Base"""
+
+
 import json
+
 
 class Base:
     """ Base class"""
@@ -43,9 +46,5 @@ class Base:
         if (json_string == None or json_string == ""):
             return []
         return json.loads(json_string)
-    @classmethod
-    def create(cls, **dictionary):
-        
-        """ function  that returns an instance with all attributes already set"""
-        Square(size):
-
+    #@classmethod
+    #def create(cls, **dictionary):
