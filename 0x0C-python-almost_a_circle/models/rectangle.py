@@ -14,10 +14,12 @@ class Rectangle(Base):
         this super call with use the logic of the __init__ of the Base
         class """
         super().__init__(id)
+
     @property
     def width(self):
         """ width function to retrieve the width"""
         return self.__width
+
     @width.setter
     def width(self, width):
         """ width function to retrieve the width"""
@@ -26,6 +28,7 @@ class Rectangle(Base):
         elif width <= 0:
             raise ValueError("width must be > 0")
         self.__width = width
+
     @property
     def height(self):
         """ height function to retrieve the height
@@ -41,6 +44,7 @@ class Rectangle(Base):
         elif height <= 0:
             raise ValueError("height must be > 0")
         self.__height = height
+
     @property
     def x(self):
         """ x function to retrieve the x
@@ -56,6 +60,7 @@ class Rectangle(Base):
         elif x < 0:
             raise ValueError("x must be >= 0")
         self.__x = x
+
     @property
     def y(self):
         """ y function to retrieve the y
@@ -71,11 +76,13 @@ class Rectangle(Base):
         elif y < 0:
             raise ValueError("y must be >= 0")
         self.__y = y
+
     def area(self):
         """
          that returns the area value of the Rectangle instance.
         """
         return (self.__width * self.__height)
+
     def display(self):
         """that prints in stdout the Rectangle instance with the character #
         """
@@ -87,11 +94,15 @@ class Rectangle(Base):
             for k in range(0, self.__width):
                 print("#", end="")
             print()
-                
+
     def __str__(self):
-        """ p"""
-        return ("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"\
-        .format(self.id, self.__x, self.__y, self.__width, self.__height))
+        """ print """
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
+                                                                 self.__x,
+                                                                 self.__y,
+                                                                 self.__width,
+                                                                 self.__height)
+
     def update(self, *args, **kwargs):
         """ function that assigns a key/value argument to attributes:
         1st argument should be the id attribute
@@ -130,7 +141,6 @@ class Rectangle(Base):
             returns the dictionary
             representation of a Rectangle
         """
-        dictionary =  {'x': self.__x, 'y': self.__y, 'id': self.id,\
-        'height':self.__height, 'width': self.__width}
+        dictionary = {'x': self.__x, 'y': self.__y, 'id': self.id,
+                      'height': self.__height, 'width': self.__width}
         return dictionary
-    
