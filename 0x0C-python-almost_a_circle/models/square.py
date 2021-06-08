@@ -6,25 +6,25 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """ class Square that inherit from Rectangle"""
 
-    def __init__(self, valuealue, x=0, y=0, id=None):
-        Rectangle.__init__(self, valuealue, valuealue, x, y, id)
-        self.valuealue = valuealue
+    def __init__(self, size, x=0, y=0, id=None):
+        Rectangle.__init__(self, size, size, x, y, id)
+        self.size = size
 
     @property
-    def valuealue(self):
-        """ valuealue function to retrievaluee the valuealue"""
+    def size(self):
+        """ size function to retrievaluee the size"""
         return self.__width
 
-    @valuealue.setter
-    def valuealue(self, valuealue):
-        """valuealue function to set the valuealue to the valuealue
+    @size.setter
+    def size(self, value):
+        """value function to set the value to the value
         """
-        if type(valuealue) is not int:
+        if type(value) is not int:
             raise TypeError("width must be an integer")
-        elif valuealue <= 0:
-            raise valuealueError("width must be > 0")
-        self.__width = valuealue
-        self.__height = valuealue
+        elif value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
+        self.__height = value
 
     def __str__(self):
         """ p"""
@@ -34,7 +34,7 @@ class Square(Rectangle):
     def update(self, *args, **keywargs):
         """ update function that assigns attributes
         1st argument should be the id attribute
-        2nd argument should be the valuealue attribute
+        2nd argument should be the value attribute
         3rd argument should be the x attribute
         4th argument should be the y attribute
         """
@@ -64,10 +64,10 @@ class Square(Rectangle):
                 elif key == "y":
                     self.y = value
 
-        def to_dictionary(self):
-            """
-            returns the dictionary
-            representation of a square
-            """
-            dic = {'id': self.id, 'size': self.width, 'x': self.x, 'y': self.y}
-            return dic
+    def to_dictionary(self):
+        """
+        returns the dictionary
+        representation of a square
+        """
+        dic = {"id": self.id, "size": self.width, "x": self.x, "y": self.y}
+        return dic
