@@ -25,11 +25,14 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
         self.__width = value
         self.__height = value
-    
+
     def __str__(self):
         """ p"""
-        return ("[Square] ({:d}) {:d}/{:d} - {:d}"\
-        .format(self.id, self.x, self.y, self.width))
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
+                                                                 self.x,
+                                                                 self.y,
+                                                                 self.width,)
+
     def update(self, *args, **kwargs):
         """ update function that assigns attributes
         1st argument should be the id attribute
@@ -55,12 +58,12 @@ class Square(Rectangle):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-        
+
         def to_dictionary(self):
             """
             returns the dictionary
             representation of a square
             """
-            dictionary = {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
+            dictionary = {'id': self.id, 'size': self.size,
+                          'x': self.x, 'y': self.y}
             return dictionary
-            
