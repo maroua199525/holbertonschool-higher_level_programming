@@ -14,7 +14,7 @@ class Base:
         if (id is not None):
             self.id = id
         else:
-            Base.__nb_objects+=1
+            Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
     @staticmethod
@@ -37,14 +37,13 @@ class Base:
             if list_objs is not None:
                 for x in list_objs:
                     lst.append(x.to_dictionary())
-            f.write(cls.to_json_string(d))
+            f.write(cls.to_json_string(lst))
+
     @staticmethod
     def from_json_string(json_string):
 
         """ returns the list of the JSON string representation json_string
         """
-        if (json_string == None or json_string == ""):
+        if (json_string is None or json_string == ""):
             return []
         return json.loads(json_string)
-    #@classmethod
-    #def create(cls, **dictionary):
