@@ -1,3 +1,0 @@
--- create the table id_not_null with values
-CREATE TABLE IF NOT EXISTS id_not_null (id INT, name VARCHAR(256));
-INSERT INTO id_not_null (id INT) value (1);
