@@ -17,6 +17,7 @@ def my_function():
     result = cursor.fetchall()
     for state in result:
         print(state)
+    cursor.close()
     db.close()
 
 if __name__ == "__main__":
