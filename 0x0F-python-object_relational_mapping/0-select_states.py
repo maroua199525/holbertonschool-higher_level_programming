@@ -13,7 +13,7 @@ def my_function():
     """prepare a cursor object using cursor() method"""
     cursor = db.cursor()
     """execute SQL query using execute() method."""
-    cursor.execute("SELECT * from states ORDER BY states.id")
+    cursor.execute ("SELECT * from states ORDER BY id ASC")
     result = cursor.fetchall()
     for state in result:
         print(state)
