@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-""" a script that lists all states from the database hbtn_0e_0_usa"""
-import MySQLdb
+"""Module state"""
 import sys
+import MySQLdb
 
 
 def my_function():
@@ -13,7 +13,7 @@ def my_function():
     """prepare a cursor object using cursor() method"""
     cursor = db.cursor()
     """execute SQL query using execute() method."""
-    cursor.execute ("SELECT * from states ORDER BY id ASC")
+    cursor.execute("SELECT * from states ORDER BY id ASC")
     result = cursor.fetchall()
     for state in result:
         print(state)

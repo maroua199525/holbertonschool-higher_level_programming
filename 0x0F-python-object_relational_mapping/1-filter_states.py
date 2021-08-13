@@ -16,7 +16,7 @@ def my_function():
     cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id")
     result = cursor.fetchall()
     for state in result:
-        if state[1][0] =='N':
+        if state[1][0] == 'N':
             print(state)
     db.close()
 
