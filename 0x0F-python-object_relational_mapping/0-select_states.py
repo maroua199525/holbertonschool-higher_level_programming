@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-""" Module state """
+""" states Module """
 
-
-import sys
 import MySQLdb
-
+import sys
 
 def my_function():
     """Open database connection"""
