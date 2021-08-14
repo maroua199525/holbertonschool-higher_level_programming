@@ -4,21 +4,24 @@
 import MySQLdb
 import sys
 
-def my_function():
-    """Open database connection"""
-    db = MySQLdb.connect(host="localhost", port=3306,
-                         user=sys.argv[1],
-                         passwd=sys.argv[2],
-                         db=sys.argv[3])
-    """prepare a cursor object using cursor() method"""
-    cursor = db.cursor()
-    """execute SQL query using execute() method."""
-    cursor.execute("SELECT * from states ORDER BY id ASC")
-    result = cursor.fetchall()
-    for state in result:
-        print(state)
-    cursor.close()
+
+def states():
+    """ list states from database """
+    db = MySQLdb.connect(
+                            host="localhost",
+                            port=3306,
+                            user=sys.argv[1],
+                            password=sys.argv[2],
+                            db=sys.argv[3]
+                            )
+    cur = db.cursor()
+    cur.execute('SELECT * FROM states ORDER BY id ASC')
+    states = cur.fetchall()
+    for row in states:
+        print(row)
+    cur.close()
     db.close()
 
-if __name__ == "__main__":
-    my_function()
+
+if __name__ == '__main__':
+    states()
